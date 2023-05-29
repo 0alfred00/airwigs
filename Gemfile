@@ -77,5 +77,5 @@ group :test do
   gem "webdrivers"
 end
 
-gem "faker"
 gem "devise"
+gem "faker"
