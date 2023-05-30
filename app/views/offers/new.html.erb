@@ -4,7 +4,7 @@
   <%= f.input :description %>
   <%= f.input :color %>
   <%= f.input :length %>
-  <%= f.select :size, options_for_select(%w["S", "M", "L"]) %>
+  <%= f.select :size, options_for_select(["S", "M", "L"]) %>
   <%= f.input :style %>
   <%= f.submit class: 'btn btn-flat' %>
 <% end %>
