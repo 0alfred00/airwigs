@@ -1,0 +1,10 @@
+<h3>Create a new list</h3>
+<%= simple_form_for @offer do |f| %>
+  <%= f.input :title, placeholder: %>
+  <%= f.input :description, placeholder: %>
+  <%= f.input :color, placeholder: %>
+  <%= f.input :lenght, placeholder: %>
+  <%= f.input :size, placeholder: %>
+  <%= f.input :style, placeholder: %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
