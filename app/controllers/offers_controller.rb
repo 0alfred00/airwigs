@@ -1,10 +1,10 @@
 class OffersController < ApplicationController
-  def show
-    @offer = Offer.find(params[:id])
-  end
-
   def index
     @offers = Offer.all
+  end
+
+  def show
+    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -12,9 +12,9 @@ class OffersController < ApplicationController
   end
 
   def create
-    @offers = Offer.create(offer_params)
+    @offer = Offer.create(offer_params)
     @offer.save
-    redirect_to offers_path(@offers)
+    redirect_to root_path
   end
 
   private
