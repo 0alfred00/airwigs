@@ -1,6 +1,7 @@
 <ul>
   <% @bookings.each do |booking| %>
     <li><%= link_to booking.offer.title, booking_path(booking.id) %></li>
+    <li><%= link_to booking.status, booking_path(booking.id) %></li>
     <br>
   <% end %>
 </ul>
