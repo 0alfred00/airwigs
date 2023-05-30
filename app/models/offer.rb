@@ -3,4 +3,5 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   validates :size, inclusion: { in: ["S", "M", "L"], allow_nil: false }
+  has_one_attached :photo
 end
