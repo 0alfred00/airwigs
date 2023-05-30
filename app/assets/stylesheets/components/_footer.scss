@@ -1,17 +1,18 @@
 .page-container {
   display: grid;
+  background-color: white;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
  }
 
  .logo_links{
   text-decoration: none;
-  color:white;
+  color:rgb(0, 0, 0);
   margin-top: 5px;
  }
 
  .logo_links:hover{
-  color: aquamarine;
+  color: rgb(109, 109, 109);
  }
 
  .footer_background{
