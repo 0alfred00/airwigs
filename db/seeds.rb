@@ -7,14 +7,14 @@ require "faker"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-#10.times do
- # User.create!(
-#    email: Faker::Internet.email,
- #   password: Faker::Internet.password,
-  #  username: Faker::Internet.username,
-   # address: Faker::Address.full_address
-  #)
-#end
+10.times do
+  User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    username: Faker::Internet.username,
+    address: Faker::Address.full_address
+  )
+end
 
 10.times do
   Offer.create!(
@@ -28,12 +28,12 @@ require "faker"
   )
 end
 
-#10.times do
- # Booking.create!(
-  #  start_date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-   # end_date: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 7),
-    #status: ["reserved", "pending", "booked"].sample,
-   # user_id: User.all.sample.id,
-   # offer_id: Offer.all.sample.id
-  #)
-#end
+# 10.times do
+#   Booking.create!(
+#     start_date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+#     end_date: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 7),
+#     status: ["reserved", "pending", "booked"].sample,
+#     user_id: User.all.sample.id,
+#     offer_id: Offer.all.sample.id
+#   )
+# end
