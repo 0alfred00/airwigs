@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root "offers#index"
   resources :offers, only: [:show, :new, :create] do
-    resources :bookings, only: [:new, :create], module: :offers
+    resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show, :edit, :update]
 end
