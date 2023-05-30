@@ -77,5 +77,9 @@ group :test do
   gem "webdrivers"
 end
 
+# custom gems for project
 gem "devise"
 gem "faker"
+
+# gems for cloudinary
+gem "cloudinary"
