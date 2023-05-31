@@ -3,14 +3,15 @@
       <%= cl_image_tag @offer.photo.key, alt: "Wig", class: "card-img-top", crop: :fill %>
     </div>
       <div class="properties d-flex">
-        <h1><%= @offer.title %></h1>
+        <h1 class="show-title"><%= @offer.title %></h1>
         <h2><%= @offer.description %></h2>
-        <h2><%= @offer.color %></h2>
-        <h2><%= @offer.length %></h2>
-        <h2><%= @offer.size %></h2>
-        <h2><%= @offer.style %></h2>
-
-        <%= link_to "New Booking", new_offer_booking_path(@offer), class: "btn btn-flat " %>
-        <%= link_to "Go back", root_path(), class: "btn btn-flat"%>
+        <h2>Color: <%= @offer.color %></h2>
+        <h2>Length: <%= @offer.length %></h2>
+        <h2>Size: <%= @offer.size %></h2>
+        <h2>Style: <%= @offer.style %></h2>
       </div>
+</div>
+<div class="links">
+  <%= link_to "New Booking", new_offer_booking_path(@offer), class: "btn btn-flat " %>
+  <%= link_to "Go back", root_path(), class: "btn btn-flat"%>
 </div>
