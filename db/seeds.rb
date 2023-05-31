@@ -18,7 +18,7 @@ end
 
 10.times do
   Offer.create!(
-    title: Faker::Commerce.product_name,
+   title: Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph_by_chars(number: 256),
     color: Faker::Color.hex_color,
     length: Faker::Number.between(from: 1, to: 100),
@@ -28,12 +28,12 @@ end
   )
 end
 
-# 10.times do
-#   Booking.create!(
-#     start_date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-#     end_date: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 7),
-#     status: ["reserved", "pending", "booked"].sample,
-#     user_id: User.all.sample.id,
-#     offer_id: Offer.all.sample.id
-#   )
-# end
+10.times do
+   Booking.create!(
+    start_date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    end_date: Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 7),
+    status: ["reserved", "pending", "booked"].sample,
+    user_id: User.all.sample.id,
+    offer_id: Offer.all.sample.id
+   )
+ end

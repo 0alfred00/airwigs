@@ -5,4 +5,7 @@
 <h2><%= @offer.size %></h2>
 <h2><%= @offer.style %></h2>
 
+<%= link_to "New Booking", new_offer_booking_path(@offer), class: "btn btn-success" %>
+<br>
+<br>
 <%= link_to "Go back", root_path %>
