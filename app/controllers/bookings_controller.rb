@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     @booking.user = current_user
     @booking.status = "pending"
+    
     if @booking.save
       redirect_to booking_path(@booking)
     else
