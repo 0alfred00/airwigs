@@ -27,6 +27,15 @@ class BookingsController < ApplicationController
     # redirect_to bookings_path(@booking)
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_offer
@@ -34,5 +43,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :offer_id)
+    params.require(:booking).permit(:status, :start_date, :end_date, :offer_id)
   end
+end
