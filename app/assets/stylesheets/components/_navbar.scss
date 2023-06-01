@@ -13,3 +13,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.rounded-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-image: asset-url('logo_wig.png');
+  background-size: cover;
+  margin-right: 10px;
+}
