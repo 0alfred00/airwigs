@@ -1,9 +1,30 @@
+// Path: app/assets/stylesheets/components/_offer_card.scss
+
 .properties{
   flex-direction: column;
+  padding: 22px;
 }
-.offer-card{
 
+.offer-card {
+  padding: 22px;
 }
 .offer-image{
   width: 250px;
+}
+
+.show-title{
+  color: blue;
+}
+
+.links{
+  padding: 0 22px;
+}
+
+.links a {
+  background-color: pink;
+  padding: 8px 12px;
+}
+
+.links a:hover {
+  background-color: rgb(202, 112, 127);
 }

@@ -1,7 +1,23 @@
-<ul>
+<div class="row">
   <% @bookings.each do |booking| %>
-    <li><%= link_to booking.offer.title, booking_path(booking.id) %></li>
-    <li><%= booking.status %></li>
-    <br>
+    <div class="col-12 p-3 d-flex justify-content">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= booking.offer.title %></h5>
+          <p class="card-text">Start Date: <%= booking.start_date %></p>
+          <p class="card-text">End Date: <%= booking.end_date %></p>
+          <p class="card-text">Status: <%= booking.status %></p>
+          <%= form_for booking do |f| %>
+            <%= f.hidden_field :status, value: "accepted" %>
+            <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
+          <% end %>
+          <br>
+          <%= form_for booking do |f| %>
+            <%= f.hidden_field :status, value: "declined" %>
+            <%= f.submit "Decline", class: "btn btn-danger float-right" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
