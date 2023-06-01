@@ -7,6 +7,7 @@
           <p class="card-text">Start Date: <%= booking.start_date %></p>
           <p class="card-text">End Date: <%= booking.end_date %></p>
           <p class="card-text">Status: <%= booking.status %></p>
+          <p class ="card-price">Booking price: <%= @booking_price %></p>
           <%= form_for booking do |f| %>
             <%= f.hidden_field :status, value: "accepted" %>
             <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
