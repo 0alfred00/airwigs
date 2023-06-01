@@ -80,6 +80,7 @@ end
 # custom gems for project
 gem "devise"
 gem "faker"
+gem "open-uri"
 
 # gems for cloudinary
 gem "cloudinary"
