@@ -9,13 +9,13 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do
-  User.create!(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password,
-    username: Faker::Internet.username,
-    address: Faker::Address.full_address
-  )
-end
+   User.create!(
+     email: Faker::Internet.email,
+     password: Faker::Internet.password,
+     username: Faker::Internet.username,
+     address: Faker::Address.full_address
+   )
+ end
 
 # 10.times do
 #   Offer.create!(
