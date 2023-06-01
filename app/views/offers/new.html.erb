@@ -1,11 +1,22 @@
-<h3>Please create here a new offer</h3>
-<%= simple_form_for @offer do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :color %>
-  <%= f.input :length %>
-  <%= f.select :size, options_for_select(["S", "M", "L"]) %>
-  <%= f.input :style %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-flat btn-pink' %>
-<% end %>
+<div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+      <h3>Please create here a new offer</h3>
+    </div>
+    <div class="formbg-outer">
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+            <%= simple_form_for @offer do |f| %>
+              <%= f.input :title %>
+              <%= f.input :description %>
+              <%= f.input :color %>
+              <%= f.input :length %>
+              <%= f.select :size, options_for_select(["S", "M", "L"]) %>
+              <%= f.input :style %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit class: 'btn btn-flat' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
