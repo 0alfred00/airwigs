@@ -5,7 +5,7 @@
 
     <%# my requests big container %>
     <div class="col">
-      <div class="card formbg">
+      <div class="card rounded-4">
         <div class="card-body">
           <h2>My booking requests</h2>
           <br>
@@ -14,13 +14,13 @@
             <div class="col">
               <div class="card formbg">
                 <div class="card-body">
-                  <details open><summary><h5 class="card-title">Pending</h5></summary>
+                  <details open><summary><h5 class="card-title d-inline">Pending</h5></summary>
                   <% @myrequests_pending.each do |booking| %>
                     <br>
                     <%# small container for one booking %>
                     <div class="row">
                       <div class="col">
-                        <div class="card formbg">
+                        <div class="card">
                           <div class="card-body">
                             <%= booking.offer.title %>
                           </div>
@@ -38,13 +38,13 @@
             <div class="col">
               <div class="card formbg">
                 <div class="card-body">
-                  <details open><summary><h5 class="card-title">Accepted</h5></summary>
+                  <details open><summary><h5 class="card-title d-inline">Accepted</h5></summary>
                   <% @myrequests_accepted.each do |booking| %>
                     <br>
                     <%# small container for one booking %>
                     <div class="row">
                       <div class="col">
-                        <div class="card formbg">
+                        <div class="card">
                           <div class="card-body">
                               <%= booking.offer.title %>
                           </div>
@@ -62,13 +62,13 @@
             <div class="col">
               <div class="card formbg">
                 <div class="card-body">
-                  <details><summary><h5 class="card-title">Declined</h5></summary>
+                  <details><summary><h5 class="card-title d-inline">Declined</h5></summary>
                   <% @myrequests_declined.each do |booking| %>
                     <br>
                     <%# small container for one booking %>
                     <div class="row">
                       <div class="col">
-                        <div class="card formbg">
+                        <div class="card">
                           <div class="card-body">
                             <%= booking.offer.title %>
                           </div>
@@ -86,7 +86,7 @@
 
     <%# my requests big container %>
     <div class="col">
-      <div class="card formbg">
+      <div class="card rounded-4">
         <div class="card-body">
           <h2>Incoming booking requests</h2>
             <br>
@@ -95,15 +95,16 @@
                 <div class="col">
                   <div class="card formbg">
                     <div class="card-body">
-                      <details open><summary><h5 class="card-title">Pending</h5></summary>
+                      <details open><summary><h5 class="card-title d-inline">Pending</h5></summary>
                       <% @mybookings_pending.each do |booking| %>
                         <br>
                         <%# small container for one booking %>
                         <div class="row">
                           <div class="col">
-                            <div class="card formbg">
+                            <div class="card ">
                               <div class="card-body">
                                 <%= booking.offer.title %>
+                                <div class="links">
                                 <%= form_for booking do |f| %>
                                   <%= f.hidden_field :status, value: "accepted" %>
                                   <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
@@ -113,6 +114,7 @@
                                   <%= f.hidden_field :status, value: "declined" %>
                                   <%= f.submit "Decline", class: "btn btn-danger float-right" %>
                                 <% end %>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -128,13 +130,13 @@
                 <div class="col">
                   <div class="card formbg">
                     <div class="card-body">
-                      <details open><summary><h5 class="card-title">Accepted</h5></summary>
+                      <details open><summary><h5 class="card-title d-inline">Accepted</h5></summary>
                       <% @mybookings_accepted.each do |booking| %>
                         <br>
                         <%# small container for one booking %>
                         <div class="row">
                           <div class="col">
-                            <div class="card formbg">
+                            <div class="card">
                               <div class="card-body">
                                   <%= booking.offer.title %>
                               </div>
@@ -152,13 +154,13 @@
                 <div class="col">
                   <div class="card formbg">
                     <div class="card-body">
-                      <details><summary><h5 class="card-title">Declined</h5></summary>
+                      <details><summary><h5 class="card-title d-inline">Declined</h5></summary>
                       <% @mybookings_declined.each do |booking| %>
                         <br>
                         <%# small container for one booking %>
                         <div class="row">
                           <div class="col">
-                            <div class="card formbg">
+                            <div class="card">
                               <div class="card-body">
                                 <%= booking.offer.title %>
                               </div>
