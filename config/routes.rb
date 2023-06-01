@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "offers#index"
-  resources :offers, only: [:show, :new, :create] do
+  resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show, :edit, :update]
