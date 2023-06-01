@@ -43,7 +43,7 @@ require "open-uri"
 
 offer1 = Offer.new(
   title: Faker::Commerce.product_name,
-  description: Faker::Lorem.paragraph_by_chars(number: 156),
+  description: Faker::Lorem.paragraph_by_chars(number: 56),
   color: Faker::Color.hex_color,
   length: Faker::Number.between(from: 1, to: 100),
   size: ["S", "M", "L"].sample,
