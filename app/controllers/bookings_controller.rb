@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-
     # redirect_to bookings_path(@booking)
   end
 
@@ -46,5 +45,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:status, :start_date, :end_date, :offer_id)
   end
-
 end
