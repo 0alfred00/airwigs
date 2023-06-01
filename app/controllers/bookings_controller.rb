@@ -3,7 +3,30 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
-    #checking
+    @myrequests = @bookings.select do |booking|
+      booking.id == current_user.id
+    end
+    @mybookings = @bookings.reject do |booking|
+      booking.id == current_user.id
+    end
+    @myrequests_pending = @myrequests.select do |booking|
+      booking.status == "pending"
+    end
+    @myrequests_accepted = @myrequests.select do |booking|
+      booking.status == "accepted"
+    end
+    @myrequests_declined = @myrequests.select do |booking|
+      booking.status == "declined"
+    end
+    @mybookings_pending = @mybookings.select do |booking|
+      booking.status == "pending"
+    end
+    @mybookings_accepted = @mybookings.select do |booking|
+      booking.status == "accepted"
+    end
+    @mybookings_declined = @mybookings.select do |booking|
+      booking.status == "declined"
+    end
   end
 
   def show

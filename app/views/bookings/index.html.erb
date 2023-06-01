@@ -1,24 +1,179 @@
-<div class="row">
-  <% @bookings.each do |booking| %>
-    <div class="col-12 p-3 d-flex justify-content">
-      <div class="card">
+<br>
+<%# New booking index %>
+<div class="container">
+  <div class="row">
+
+    <%# my requests big container %>
+    <div class="col">
+      <div class="card formbg">
         <div class="card-body">
-          <h5 class="card-title"><%= booking.offer.title %></h5>
-          <p class="card-text">Start Date: <%= booking.start_date %></p>
-          <p class="card-text">End Date: <%= booking.end_date %></p>
-          <p class="card-text">Status: <%= booking.status %></p>
-          <p class ="card-price">Price: <%= [20, 25, 30, 35, 40, 45, 50].sample %></p>
-          <%= form_for booking do |f| %>
-            <%= f.hidden_field :status, value: "accepted" %>
-            <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
-          <% end %>
+          <h2>My booking requests</h2>
           <br>
-          <%= form_for booking do |f| %>
-            <%= f.hidden_field :status, value: "declined" %>
-            <%= f.submit "Decline", class: "btn btn-danger float-right" %>
-          <% end %>
+          <%# 1st row medium container for pending requests %>
+          <div class="row">
+            <div class="col">
+              <div class="card formbg">
+                <div class="card-body">
+                  <details open><summary><h5 class="card-title">Pending</h5></summary>
+                  <% @myrequests_pending.each do |booking| %>
+                    <br>
+                    <%# small container for one booking %>
+                    <div class="row">
+                      <div class="col">
+                        <div class="card formbg">
+                          <div class="card-body">
+                            <%= booking.offer.title %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %></details>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <%# 2nd row medium container for accepted requests %>
+          <div class="row">
+            <div class="col">
+              <div class="card formbg">
+                <div class="card-body">
+                  <details open><summary><h5 class="card-title">Accepted</h5></summary>
+                  <% @myrequests_accepted.each do |booking| %>
+                    <br>
+                    <%# small container for one booking %>
+                    <div class="row">
+                      <div class="col">
+                        <div class="card formbg">
+                          <div class="card-body">
+                              <%= booking.offer.title %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %></details>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <%# 3rd row medium container for declined requests %>
+          <div class="row">
+            <div class="col">
+              <div class="card formbg">
+                <div class="card-body">
+                  <details><summary><h5 class="card-title">Declined</h5></summary>
+                  <% @myrequests_declined.each do |booking| %>
+                    <br>
+                    <%# small container for one booking %>
+                    <div class="row">
+                      <div class="col">
+                        <div class="card formbg">
+                          <div class="card-body">
+                            <%= booking.offer.title %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %></details>
+                 </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  <% end %>
+
+    <%# my requests big container %>
+    <div class="col">
+      <div class="card formbg">
+        <div class="card-body">
+          <h2>Incoming booking requests</h2>
+            <br>
+              <%# 1st row medium container for pending requests %>
+              <div class="row">
+                <div class="col">
+                  <div class="card formbg">
+                    <div class="card-body">
+                      <details open><summary><h5 class="card-title">Pending</h5></summary>
+                      <% @mybookings_pending.each do |booking| %>
+                        <br>
+                        <%# small container for one booking %>
+                        <div class="row">
+                          <div class="col">
+                            <div class="card formbg">
+                              <div class="card-body">
+                                <%= booking.offer.title %>
+                                <%= form_for booking do |f| %>
+                                  <%= f.hidden_field :status, value: "accepted" %>
+                                  <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
+                                <% end %>
+                                <br>
+                                <%= form_for booking do |f| %>
+                                  <%= f.hidden_field :status, value: "declined" %>
+                                  <%= f.submit "Decline", class: "btn btn-danger float-right" %>
+                                <% end %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %></details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <%# 2nd row medium container for accepted requests %>
+              <div class="row">
+                <div class="col">
+                  <div class="card formbg">
+                    <div class="card-body">
+                      <details open><summary><h5 class="card-title">Accepted</h5></summary>
+                      <% @mybookings_accepted.each do |booking| %>
+                        <br>
+                        <%# small container for one booking %>
+                        <div class="row">
+                          <div class="col">
+                            <div class="card formbg">
+                              <div class="card-body">
+                                  <%= booking.offer.title %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %></details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <%# 3rd row medium container for declined requests %>
+              <div class="row">
+                <div class="col">
+                  <div class="card formbg">
+                    <div class="card-body">
+                      <details><summary><h5 class="card-title">Declined</h5></summary>
+                      <% @mybookings_declined.each do |booking| %>
+                        <br>
+                        <%# small container for one booking %>
+                        <div class="row">
+                          <div class="col">
+                            <div class="card formbg">
+                              <div class="card-body">
+                                <%= booking.offer.title %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %></details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
