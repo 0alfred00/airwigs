@@ -45,7 +45,7 @@
                 <h5 class="card-title">Status: <%= @booking.status %></h5>
                 <p class="card-text">Booking Start Date: <%= @booking.start_date %></p>
                 <p class="card-text">Booking End Date: <%= @booking.end_date %></p>
-                <p class ="card-price">Price: <%= @booking_price %></p>
+                <p class ="card-price">Price: <%= [20, 25, 30, 35, 40, 45, 50].sample %></p>
                <div class="links">
                 <%= link_to "Go back", root_path, class: "btn" %>
               </div>
