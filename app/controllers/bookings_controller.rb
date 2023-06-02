@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
     @mybookings = @bookings.reject do |booking|
       booking.user_id == current_user.id
     end
-    raise
     @myrequests_pending = @myrequests.select do |booking|
       booking.status == "pending"
     end
