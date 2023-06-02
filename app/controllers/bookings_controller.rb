@@ -4,10 +4,10 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
     @myrequests = @bookings.select do |booking|
-      booking.id == current_user.id
+      booking.user_id == current_user.id
     end
     @mybookings = @bookings.reject do |booking|
-      booking.id == current_user.id
+      booking.user_id == current_user.id
     end
     @myrequests_pending = @myrequests.select do |booking|
       booking.status == "pending"
