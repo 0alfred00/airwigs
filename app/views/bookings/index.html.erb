@@ -107,12 +107,12 @@
                                 <div class="links">
                                 <%= form_for booking do |f| %>
                                   <%= f.hidden_field :status, value: "accepted" %>
-                                  <%= f.submit "Accept", class: "btn btn-success float-right ml-2" %>
+                                  <%= f.submit "Accept", class: "btn btn-pink float-right ml-2" %>
                                 <% end %>
                                 <br>
                                 <%= form_for booking do |f| %>
                                   <%= f.hidden_field :status, value: "declined" %>
-                                  <%= f.submit "Decline", class: "btn btn-danger float-right" %>
+                                  <%= f.submit "Decline", class: "btn btn-pink float-right" %>
                                 <% end %>
                                 </div>
                               </div>
