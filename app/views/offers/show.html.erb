@@ -1,18 +1,27 @@
-<div class="offer-card d-flex">
-    <div class="offer-image">
-      <%= cl_image_tag @offer.photo.key, alt: "Wig", class: "card-img-top", crop: :fill %>
-    </div>
-      <div class="properties d-flex">
-        <h1 class="show-title"><%= @offer.title %></h1>
-        <h2><%= @offer.description %></h2>
-        <h2>Color: <%= @offer.color %></h2>
-        <h2>Length: <%= @offer.length %></h2>
-        <h2>Size: <%= @offer.size %></h2>
-        <h2>Style: <%= @offer.style %></h2>
-        <h2>Price : <%=[20, 25, 30, 35, 40, 45, 50].sample %>€</h2>
+<div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+      <div class="offer-card">
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <div class="properties d-flex justify-content-center">
+                <div class="offer-image ">
+                  <%= cl_image_tag @offer.photo.key, alt: "Wig", class: "card-img-top", crop: :fill %>
+                </div>
+                    <h1 class="show-title"><%= @offer.title %></h1>
+                    <h2><%= @offer.description %></h2>
+                    <h2>Color: <%= @offer.color %></h2>
+                    <h2>Length: <%= @offer.length %></h2>
+                    <h2>Size: <%= @offer.size %></h2>
+                    <h2>Style: <%= @offer.style %></h2>
+                    <h2>Price : <%=[20, 25, 30, 35, 40, 45, 50].sample %>€</h2>
+                <div class="links">
+                  <%= link_to "Back", root_path(), class: "btn btn-flat btn-pink"%>
+                  <%= link_to "New Booking", new_offer_booking_path(@offer), class: "btn btn-flat btn-pink" %>
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
-</div>
-<div class="links">
-  <%= link_to "Back", root_path(), class: "btn btn-flat btn-pink"%>
-  <%= link_to "New Booking", new_offer_booking_path(@offer), class: "btn btn-flat btn-pink" %>
+    </div>
 </div>
